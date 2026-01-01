@@ -86,7 +86,7 @@ class LL{
             }
             temp = temp.next;
         }
-        Collections.sort(arr);  //O(n log n) - sorting the array, Space complexity - O(n*m) for the array to store all the nodes, n*m nodes 
+        Collections.sort(arr);  //O(x log x), x=n*m - sorting the array, Space complexity - O(n*m) for the array to store all the nodes, n*m nodes 
         ListNode dummyNode = new ListNode(-1);
         temp = dummyNode;
         //O(n*m): Creating a new LL having ALL the nodes so n*m nodes, Space complexity- O(n*m) for the new LL 
@@ -110,10 +110,47 @@ class LL{
 
     //optimised - use the property that each child list is already sorted
 
-    public void convertto1dOptimised(){
-        
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2){
+        ListNode dummyNode = new ListNode(-1);
+        ListNode res = dummyNode;
+        while(l1 != null && l2!= null){
+            if(l1.val < l2.val){
+                res.child = l1;
+                res = l1;
+                l1 = l1.child;
+            }else{
+                res.child = l2;
+                res = l2;
+                l2 = l2.child;
+            }
+            res.next = null;
+        }
+
+        if(l1!= null){
+            res.child = l1;
+        }else{
+            res.child = l2;
+        }
+        return dummyNode.child;
     }
-        //to be implemented
+//not working as expected
+    public ListNode convertto1dOptimised(ListNode head){
+        if(head == null || head.next == null){
+            return head;
+        }
+
+        ListNode mergedHead =  convertto1dOptimised(head.next);
+        return mergeTwoLists(head, mergedHead);
+    }
+
+    public void displayFlattenedList(ListNode head){
+        temp = head;
+        while(temp != null){
+            System.out.print(temp.val + " -> ");
+            temp = temp.child;
+        }
+        System.out.print(" X \n");
+    }
 }
 public class Flatten
 {
@@ -121,8 +158,8 @@ public class Flatten
 	    Scanner sc = new Scanner(System.in);
         int choice = 0;
         LL list = new LL();
-        while(choice != 5){
-            System.out.println("Menu: \n1. Press 1 to insert\n2. Press 2 to display\n3. Press 3 to display node list\n4. Convert to ID\n5. Press 5 to exit\n");
+        while(choice != 6){
+            System.out.println("Menu: \n1. Press 1 to insert\n2. Press 2 to display\n3. Press 3 to display node list\n4. Convert to ID\n5. Press 5 to flatten optimally \n6. Press 6 to exit\n");
             choice = sc.nextInt();
             switch(choice){
                 case 1: list.insert();
@@ -135,7 +172,9 @@ public class Flatten
                 break;
                 case 4: list.convertto1d();
                 break;
-                case 5: System.out.println("Exiting...");
+                case 5: list.displayFlattenedList(list.convertto1dOptimised(list.head));
+                break;
+                case 6: System.out.println("Exiting...");
                 break;
                 default: System.out.println("Invalid option!!");
             }
