@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class LinearSearch {
@@ -21,6 +22,22 @@ public class LinearSearch {
         }
 
         return findLastIndex(arr, i-1, key);
+    }
+
+    static ArrayList<Integer> helper(int arr[], int i, int key, ArrayList<Integer> list){
+       if(i == arr.length){
+            return list;
+       }
+       if(arr[i] == key){
+        list.add(i);
+       }
+
+       return helper(arr, i+1, key, list);
+    }
+
+    static ArrayList<Integer> findAllIndex(int arr[], int i, int key){        //the return type can be ArrayList only too
+        ArrayList<Integer> list = new ArrayList<>();
+        return helper(arr, i, key, list);
     }
 
     static boolean search(int arr[], int i, int key){
@@ -56,10 +73,17 @@ public class LinearSearch {
         }
 
         int lastIndex = findLastIndex(arr, arr.length-1, key);        //returns the last occurence index
-        if(ans == -1){
+        if(lastIndex == -1){
             System.out.println("Element not found in the array.");
         } else {
             System.out.println("Element was last found at: " + lastIndex);
+        }
+
+        ArrayList<Integer> allIndex = findAllIndex(arr, 0, key);        //returns the list of all occurence index
+        if(allIndex.size() == 0){
+            System.out.println("Element not found in the array.");
+        } else {
+            System.out.println("Element was found at: " + allIndex);      //will print array of positions, we can print each pos seperately too using for (int num : list) 
         }
     }
 }
