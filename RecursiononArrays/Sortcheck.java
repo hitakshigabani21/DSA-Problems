@@ -1,12 +1,12 @@
 import java.util.*;
 
 public class Sortcheck {
-    static boolean isSorted(int arr[], int i, int n){
-        if(i== n-1){
+    static boolean isSorted(int arr[], int i){
+        if(i==arr.length-1){
             return true;
         }
         if(arr[i] < arr[i+1]){
-            return isSorted(arr, i+1, n);
+            return isSorted(arr, i+1);
         }
         return false;
     }
@@ -20,7 +20,7 @@ public class Sortcheck {
             arr[i] = sc.nextInt();
         }
 
-        if(isSorted(arr, 0, n-1)){
+        if(isSorted(arr, 0)){
             System.out.println("The array is sorted in ascending order.");
         } else {
             System.out.println("The array is not sorted in ascending order.");
