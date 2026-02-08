@@ -3,7 +3,7 @@ import java.util.*;
 public class Sortcheck {
     static boolean isSorted(int arr[], int i, int n){
         if(i== n-1){
-            return arr[i] < arr[i+1];
+            return true;
         }
 
         return arr[i] < arr[i+1] && isSorted(arr, i+1, n);
