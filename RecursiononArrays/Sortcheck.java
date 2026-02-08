@@ -6,7 +6,11 @@ public class Sortcheck {
             return true;
         }
 
-        return arr[i] < arr[i+1] && isSorted(arr, i+1, n);
+        if(arr[i] > arr[i+1]){
+            return false;
+        }
+
+        return isSorted(arr, i+1, n);
     }
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
