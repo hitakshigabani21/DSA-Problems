@@ -5,12 +5,10 @@ public class Sortcheck {
         if(i== n-1){
             return true;
         }
-
-        if(arr[i] > arr[i+1]){
-            return false;
+        if(arr[i] < arr[i+1]){
+            return isSorted(arr, i+1, n);
         }
-
-        return isSorted(arr, i+1, n);
+        return false;
     }
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
