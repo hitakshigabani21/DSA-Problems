@@ -13,10 +13,24 @@ public class RightTriangle {
         System.out.print("* ");
         printTriangle(n, row, col+1);
     }
+// here just change the order of recursive calls to print the triangle normal 
+    static void printTriangle2(int row, int col){
+        if(row == 0){
+            return;
+        }
+
+        if(col<row){
+            printTriangle2(row, col+1);
+            System.out.print("* ");
+        } else {
+            printTriangle2(row-1, 0);
+            System.out.println();
+        }
+    }
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of rows: ");
         int n = sc.nextInt();
-        printTriangle(n, 0, 0);
+        printTriangle2(n, 0);
     }
 }
