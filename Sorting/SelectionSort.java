@@ -20,9 +20,22 @@ public class SelectionSort {
             }
        }
     }
+// using recursion
+    public static void sort2(int arr[], int i){
+        if(i==0){
+            return;
+        }
+        int maxpos = findMax(arr, i);
+        if(maxpos!= i){
+            int temp = arr[maxpos];
+            arr[maxpos] = arr[i];
+            arr[i] = temp;
+        }
+        sort2(arr, i-1);
+    }
     public static void main(String args[]){
         int arr[]={5,4,3,2,1};
-        sort(arr);
+        sort2(arr, arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
 }
