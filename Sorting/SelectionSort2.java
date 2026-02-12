@@ -18,6 +18,30 @@ public class SelectionSort2 {
             arr[max] = temp;
         }
     }
+
+    static int findMaxPos(int arr[], int lastIndex){
+        int max = 0;
+        for(int i=0; i<=lastIndex; i++){
+            if(arr[max] < arr[i]){
+                max = i;
+            }
+        }
+        return max;
+    }
+
+    static void swap(int arr[], int a, int b){
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
+    static void sort2(int arr[]){
+        for(int i=0; i< arr.length; i++){
+            int lastIndex = arr.length-1-i;
+            int maxPos = findMaxPos(arr, lastIndex);
+            swap(arr, maxPos, lastIndex);
+        }
+    }
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of elements: ");
@@ -28,7 +52,11 @@ public class SelectionSort2 {
             arr[i] = sc.nextInt();
         }
 
-        sort(arr);
+        //approach-1
+        // sort(arr);
+        // System.out.println("Sorted array: " + Arrays.toString(arr));
+        //approach-2
+        sort2(arr);
         System.out.println("Sorted array: " + Arrays.toString(arr));
     }
 }
