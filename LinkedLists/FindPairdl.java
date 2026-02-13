@@ -113,6 +113,7 @@ public class FindPairdl{
                 default:
                     System.out.println("Invalid choice! Please try again."); 
             }
+            sc.close();
         }
     }
 }

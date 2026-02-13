@@ -32,5 +32,6 @@ public class RightTriangle {
         System.out.println("Enter the number of rows: ");
         int n = sc.nextInt();
         printTriangle2(n, 0);
+        sc.close();
     }
 }

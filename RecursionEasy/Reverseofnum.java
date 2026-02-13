@@ -20,5 +20,6 @@ public class Reverseofnum {
         
         int rev = rev(num, digits-1);
         System.out.println(rev);
+        sc.close();
     }
 }

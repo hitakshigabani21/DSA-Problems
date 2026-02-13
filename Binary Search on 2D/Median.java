@@ -72,5 +72,6 @@ public class Median {
 
         int median = findMedian(arr, n, m);
         System.out.println("The median is: " + median);
+        sc.close();
     }
 }

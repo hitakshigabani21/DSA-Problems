@@ -13,5 +13,6 @@ public class Printnumrev {
         System.out.println("Enter a number: ");
         int n = sc.nextInt();
         printrev(n);
+        sc.close();
     }
 }

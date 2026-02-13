@@ -44,6 +44,7 @@ public class RotatedBS {
         }else{
             System.out.println("Element found at index: " + result);
         }
+        sc.close();
 
     }
 }

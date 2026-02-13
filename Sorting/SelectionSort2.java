@@ -58,5 +58,6 @@ public class SelectionSort2 {
         //approach-2
         sort2(arr);
         System.out.println("Sorted array: " + Arrays.toString(arr));
+        sc.close();
     }
 }

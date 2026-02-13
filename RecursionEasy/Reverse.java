@@ -1,4 +1,3 @@
-import java.util.*;
 public class Reverse {
     //Approach-2 : Basic
     static int sum =0;
@@ -29,6 +28,7 @@ public class Reverse {
 
         int n2 = 1234;
         System.out.println(rev2(n2)); 
+       
     }
 }
 

@@ -33,5 +33,6 @@ public class Countzeros {
 
         int result = countZero2(num, 0);
         System.out.println(result);
+        sc.close();
     }
 }

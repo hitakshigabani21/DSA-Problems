@@ -33,6 +33,7 @@ class DoublyLL{
             newNode.prev = temp;
             temp.next = newNode;
         }
+        sc.close();
     }
 
      public int calcLength(){
@@ -61,6 +62,7 @@ class DoublyLL{
             start = newNode;
             newNode.prev = null; //not needed but still
         }
+        sc.close();
     }
 
     public void insertAtPos(){
@@ -97,6 +99,7 @@ class DoublyLL{
                 
             }
         }
+        sc.close();
     }
 
     public int search(int x){
@@ -168,6 +171,7 @@ class DoublyLL{
                 temp.prev.next = null;  //or we can also call delete at end
             }
         }
+        sc.close();
     }
 
     public void reverse() {
@@ -237,6 +241,7 @@ public class DoubleLL {
                 break;
                 default: System.out.println("Invalid option");
             }
+            sc.close();
         }
         System.out.println("Total length = "+ list.calcLength());
 

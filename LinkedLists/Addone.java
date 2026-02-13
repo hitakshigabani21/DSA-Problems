@@ -132,6 +132,7 @@ class Addone{
                 default: System.out.println("Invalid option");
             }
         }
+        sc.close();
     } 
 }
 

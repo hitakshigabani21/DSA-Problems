@@ -1,5 +1,5 @@
 //correct optimal code for flattening 
-import java.util.*;
+
 
 // Definition of special linked list
 class ListNode {

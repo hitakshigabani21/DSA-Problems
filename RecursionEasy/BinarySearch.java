@@ -33,5 +33,6 @@ class BinarySearch {
         }else{
             System.out.println("Element found at: "+res);
         }
+        sc.close();
     }
 }

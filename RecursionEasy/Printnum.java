@@ -14,5 +14,7 @@ public class Printnum {
         System.out.println("Enter a number: ");
         int n = sc.nextInt();
         print(n);
+        sc.close();
     }
+
 }

@@ -84,5 +84,6 @@ public class LinearSearch {
         } else {
             System.out.println("Element was found at: " + allIndex);      //will print array of positions, we can print each pos seperately too using for (int num : list) 
         }
+        sc.close();
     }
 }

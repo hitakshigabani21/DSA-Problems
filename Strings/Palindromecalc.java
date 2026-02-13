@@ -61,6 +61,7 @@ public class Palindromecalc {
         if(flag != 1){
             System.out.println("True");
         }
+        sc.close();
     }
 }
 

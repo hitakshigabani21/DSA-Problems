@@ -18,6 +18,6 @@ public class TopLeftTriangle {
         System.out.println("Enter the number of rows: ");
         int n = sc.nextInt();
         printTriangle(n, 0);
-
+        sc.close();
     }
 }

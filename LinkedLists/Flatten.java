@@ -33,6 +33,7 @@ class LL{
                 temp1 = newNode;
             }
         }
+        sc.close();
         return newHead;
     }
     

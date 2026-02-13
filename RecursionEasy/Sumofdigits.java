@@ -12,5 +12,6 @@ public class Sumofdigits {
         int n = sc.nextInt();
         int result = sumofDigits(n);
         System.out.println("Sum of digits of " + n + " is: " + result);
+        sc.close();
     }
 }

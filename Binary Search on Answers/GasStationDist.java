@@ -47,7 +47,7 @@ public class GasStationDist{
 
 //Optimal approach: Using Binary Search
 
-import java.util.*;
+
 
 public class GasStationDist{
     public static int numberOfGasStationsRequired(double dist, int[] arr) {

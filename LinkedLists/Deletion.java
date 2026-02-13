@@ -145,5 +145,6 @@ public class Deletion{
                     System.out.println("Invalid choice!");
             }
         }
+        sc.close();
     }
 }

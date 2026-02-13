@@ -15,5 +15,6 @@ public class ProductofDigits {
         int n = sc.nextInt();
         int result = product(n);
         System.out.println("Product of digits of " + n + " is: " + result);
+        sc.close();
     }
 }

@@ -51,5 +51,6 @@ class LLinsertdisplay {
             break;
         }
       }
+      sc.close();
     }
 }

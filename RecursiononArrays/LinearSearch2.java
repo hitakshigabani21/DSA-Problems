@@ -62,5 +62,6 @@ public class LinearSearch2 {
 
         //approach-3: without passing the list as a parameter in the function and returning it (not recommended approach)
         System.out.println("The element is present at the following indexes: "+ findAllIndex3(arr, 0, key));
+        sc.close();
     }
 }

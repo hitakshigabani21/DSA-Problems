@@ -38,5 +38,6 @@ public class SelectionSort1 {
 
         sort(arr, arr.length-1);
         System.out.println("Sorted array: " + Arrays.toString(arr));
+        sc.close();
     }
 }

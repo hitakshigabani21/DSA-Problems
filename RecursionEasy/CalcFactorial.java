@@ -12,6 +12,8 @@ public class CalcFactorial {
         System.out.println("Enter a number: ");
         int n= sc.nextInt();
         int result = factorial(n);
-        System.out.println("Factorial of " + n + " is: " + result);;
+        System.out.println("Factorial of " + n + " is: " + result);
+        sc.close();
     }
+
 }
