@@ -1,24 +1,18 @@
 import java.util.*;
 
 public class InsertionSort{
-
-    // static void swap(int arr[], int a, int b){
-    //     int temp = a;
-    //     a = b;
-    //     b = temp;
-    // }
     static void sort(int arr[]){
         for(int i=0; i< arr.length-1; i++){
+            int j;
             int temp = arr[i+1];
-            for(int j=i; j>=0; j--){
+            for(j=i; j>=0; j--){
                 if(temp < arr[j]){
-                    int temp2 = arr[j];
-                    arr[j] = temp;
-                    temp = temp2;
+                    arr[j+1] = arr[j];
                 }else{
-                    break;    //all the elements further on tthe left side need not to be checked
+                    break;    
                 }
             }
+            arr[j+1] = temp;
         }
     }
     public static void main(String args[]){
