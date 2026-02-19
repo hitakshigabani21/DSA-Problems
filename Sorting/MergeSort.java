@@ -94,12 +94,8 @@ class MergeSort {
         
         //copy the part to org array
         //why this is required? because we are passing the org array so whatever new subarray is made that is copied back to the org array which will be its subpart(subpart of org array will then be sorted)
-        k=0;
-        i=start;
-        while(i<=end){
-            arr[i] = sortedarr[k];
-            k++;
-            i++;
+        for(k=0; k<sortedarr.length; k++){
+            arr[start+k] = sortedarr[k];
         }
     }
     public static void main(String[] args) {
