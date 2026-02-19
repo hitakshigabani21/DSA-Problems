@@ -67,7 +67,7 @@ class MergeSort {
     
     static void merge(int arr[], int start, int mid, int end){
         int i=start, j=mid+1, k=0;
-        int sortedarr[] = new int[end-start+1];
+        int sortedarr[] = new int[end-start+1];  //why end-start? becuase not necessary start will always be 0 eg- merge(2,3,4) in that the case the array size is not 2+4 = 7 it is 4-2 = 2 and 2+1 because the index starts from 0 and the size is +1 than the indices eg- size = 5 but the indices are from 0 to 4
         while(i<=mid && j<= end){
             if(arr[i]<arr[j]){
                 sortedarr[k] = arr[i];
@@ -93,6 +93,7 @@ class MergeSort {
         }
         
         //copy the part to org array
+        //why this is required? because we are passing the org array so whatever new subarray is made that is copied back to the org array which will be its subpart(subpart of org array will then be sorted)
         k=0;
         i=start;
         while(i<=end){
